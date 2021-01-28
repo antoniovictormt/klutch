@@ -39,7 +39,7 @@ type Porps = {};
 const Simulation = (props: Porps) => {
   const { dadosEmprestimo, pedidoEmprestimo } = useAuth()
   const [arr, setArr] = useState(pedidoEmprestimo)
-  const [loading, setLoading] = useState(true)
+  const [, setLoading] = useState(true)
 
   interface RatetableModel {
     id: number;

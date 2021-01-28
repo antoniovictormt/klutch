@@ -68,8 +68,8 @@ const AuthContext = createContext<AuthContexData>(postsContextDefaultValue);
 export const AuthProvider: React.FC = ({ children }) => {
   const [user, setUser] = useState<User | null>(null)
   const [pedidoEmprestimo, setPedidoEmprestimo] = useState<InfoEmprestimo | null>(null)
-  const [solicitation, setSolicitation] = useState<Solicitations | null>(null);
-  const [arraySolicitation, setArraySolicitation] = useState(Api.solicitation);
+  const [, setSolicitation] = useState<Solicitations | null>(null);
+  const [arraySolicitation,] = useState(Api.solicitation);
   // const [load, setLoad] = useState<boolean>(false)
 
   // useEffect(()=>{
