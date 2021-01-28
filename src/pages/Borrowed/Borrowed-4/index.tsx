@@ -43,9 +43,6 @@ type Porps = {};
 
 const Borrowed4 = (props: Porps) => {
   const { user, pedidoEmprestimo, createSolicitation } = useAuth()
-
-  // const [valDesejado, setvalDesejado] = useState(pedidoEmprestimo)
-
   interface RatetableModel {
     id: number;
     name: string;
@@ -65,8 +62,6 @@ const Borrowed4 = (props: Porps) => {
   const [rateTable, setRateTable] = useState<RatetableModel[]>([]);
   const search = () => { };
 
-  // const { id } = useParams()
-
   const history = useHistory();
   const handleClick = () => {
 
@@ -77,31 +72,31 @@ const Borrowed4 = (props: Porps) => {
     interface Solicitations {
       id?: number,
       clientId?: number,
-      installmentInterest?: number,  /*comment1: Juros parcelados*/
-      installmentInterestValue?: number, /*comment2: Valor de juros parcelado*/
+      installmentInterest?: number,
+      installmentInterestValue?: number,
       comission?: number,
       comissionValue?: number,
-      installmentValue?: number, /*comment3: Valor da parcela*/
+      installmentValue?: number,
       cardNumber?: string,
-      desiredValue?: number, /*comment4: Valor desejado*/
-      totalLoan?: number, /*comment5: Empréstimo total*/
-      installmentId?: number, /*comment6: Id de parcelamento*/
-      rateTableId?: number, /*comment7": "Tabela de taxas"*/
+      desiredValue?: number,
+      totalLoan?: number,
+      installmentId?: number,
+      rateTableId?: number,
     }
 
     let objSolicitations: Solicitations = {
       id: Number(numWithDate),
       clientId: user?.id,
-      installmentInterest: pedidoEmprestimo?.jurosParcelas,  /*comment1: Juros parcelados*/
-      installmentInterestValue: 1, /*comment2: Valor de juros parcelado*/
+      installmentInterest: pedidoEmprestimo?.jurosParcelas,
+      installmentInterestValue: 1,
       comission: pedidoEmprestimo?.comissao,
       comissionValue: 1,
-      installmentValue: 1, /*comment3: Valor da parcela*/
+      installmentValue: 1,
       cardNumber: "Num cartão",
-      desiredValue: pedidoEmprestimo?.valorDesejado, /*comment4: Valor desejado*/
-      totalLoan: 1, /*comment5: Empréstimo total*/
-      installmentId: 1, /*comment6: Id de parcelamento*/
-      rateTableId: pedidoEmprestimo?.idTabela, /*comment7": "Tabela de taxas"*/
+      desiredValue: pedidoEmprestimo?.valorDesejado,
+      totalLoan: 1,
+      installmentId: 1,
+      rateTableId: pedidoEmprestimo?.idTabela,
     }
 
     // console.log("Solicitação");
@@ -111,7 +106,6 @@ const Borrowed4 = (props: Porps) => {
   };
 
   const searchTable = () => {
-    // const data:object = Api.rateTable[0];
     let arr = [Api.rateTable[0]];
 
     setRateTable(Object(arr));

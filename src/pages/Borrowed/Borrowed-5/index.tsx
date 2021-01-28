@@ -109,8 +109,7 @@ const Borrowed5 = (props: Porps) => {
                   <DivTitleSelect>
                     <SpanSelect style={{ color: "#777777" }}>
                       71 9988-7766
-                                    </SpanSelect>
-                    {/* <img src={IconChecked} alt="" width={30} height={30} /> */}
+                    </SpanSelect>
                     <FaCheck color={"#228A95"} size={20} />
                   </DivTitleSelect>
                 </DivBaseSelectTop2>
@@ -153,7 +152,6 @@ const Borrowed5 = (props: Porps) => {
                     <SpanSelect style={{ color: "#ef9c4b", fontSize: 20 }}>
                       12%
                     </SpanSelect>
-                    {/* <img src={IconChecked} alt="" width={30} height={30} /> */}
                     <FaCheck color={"#228A95"} size={20} />
                   </DivTitleSelect>
                 </DivBaseSelectTop2>

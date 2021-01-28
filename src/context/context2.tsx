@@ -1,9 +1,6 @@
 import React, { createContext, useState, useContext } from 'react';
 
 import Api from '../services/api.json';
-
-//interface para tipar o conteudo 
-//interface User, para definir o objeto
 interface User {
   id: number;
   name: string;
@@ -29,26 +26,23 @@ interface InfoEmprestimo {
 interface Solicitations {
   id: number,
   clientId?: number,
-  installmentInterest?: number,  /*comment1: Juros parcelados*/
-  installmentInterestValue?: number, /*comment2: Valor de juros parcelado*/
+  installmentInterest?: number,
+  installmentInterestValue?: number,
   comission?: number,
   comissionValue?: number,
-  installmentValue?: number, /*comment3: Valor da parcela*/
+  installmentValue?: number,
   cardNumber?: string,
-  desiredValue?: number, /*comment4: Valor desejado*/
-  totalLoan?: number, /*comment5: Empréstimo total*/
-  installmentId?: number, /*comment6: Id de parcelamento*/
-  rateTableId?: number, /*comment7": "Tabela de taxas"*/
+  desiredValue?: number,
+  totalLoan?: number,
+  installmentId?: number,
+  rateTableId?: number,
 }
-
-//interface AuthContextData, para definir o tipo de conteudo do Context
 interface AuthContexData {
   user: User | null;
   pedidoEmprestimo: InfoEmprestimo | null;
   dadosEmprestimo(item: object): void;
   dadosUser(item: object): void;
   createSolicitation(item: object): void;
-  // load: boolean;
 }
 
 export const postsContextDefaultValue: AuthContexData = {
@@ -59,51 +53,14 @@ export const postsContextDefaultValue: AuthContexData = {
   createSolicitation: () => null,
 }
 
-/************ */
-// export const postsContextDefaultValue: AuthContexData = {}
-//definindo o contexto, e passando a interface como tipo <Tipo>
 const AuthContext = createContext<AuthContexData>(postsContextDefaultValue);
 
-//Definindo o provider que ficara por volta da aplicacao -- o children são os filhos que ficaram por dentro desse componente, no App.tsx
+
 export const AuthProvider: React.FC = ({ children }) => {
   const [user, setUser] = useState<User | null>(null)
   const [pedidoEmprestimo, setPedidoEmprestimo] = useState<InfoEmprestimo | null>(null)
   const [, setSolicitation] = useState<Solicitations | null>(null);
   const [arraySolicitation,] = useState(Api.solicitation);
-  // const [load, setLoad] = useState<boolean>(false)
-
-  // useEffect(()=>{
-  //     async function loadStorageData(){
-  //         const storageUser = localStorage.getItem('@ReactAuth:user')
-  //         const storageToken = localStorage.getItem('@ReactAuth:token')
-
-  //         if(storageUser && storageToken){
-  //             setUser(JSON.parse(storageUser))
-  //             setLoad(false)
-  //         }
-  //     }
-  //     loadStorageData()
-  // }, [])
-
-
-  // async function signIn(){
-  //     const response = await auth.signIn()
-  //     localStorage.setItem('@ReactAuth:user', JSON.stringify(response.user))
-  //     localStorage.setItem('@ReactAuth:token', response.token)
-  //     setUser(response.user)
-  // }
-
-  // interface Client {
-  //   id: number;
-  //   name: string;
-  //   phone: string;
-  //   cpf: string;
-  //   bank: {
-  //     label: string;
-  //     accountTypeLabel: string;
-  //     accountNumber: string;
-  //   };
-  // }
 
   function dadosUser(item: User) {
     console.log("dados do User")
@@ -121,8 +78,6 @@ export const AuthProvider: React.FC = ({ children }) => {
     })
   }
   function dadosEmprestimo(item: InfoEmprestimo) {
-    // console.log("dados do pedido")
-    // console.log(item)
     setPedidoEmprestimo({
       idTabela: item.idTabela,
       nameTabela: item.nameTabela,
@@ -172,14 +127,9 @@ export const AuthProvider: React.FC = ({ children }) => {
     console.log(f)
     console.log("Solicitação1")
     console.log(arraySolicitation)
-
-    // return history.push(`/solicitar_emprestimo05/${item.id}`)
   }
 
   return (
-    //ao usar !! transforma a variavel em boolean, mesmo que usar Boolean(user)
-    //no value sao enviados as variaveis ou funcoes que poderam ser usadas nos componentes filhos
-    // <AuthContext.Provider value={{user, logOut, load}}>
     <AuthContext.Provider value={{ dadosUser, user, dadosEmprestimo, pedidoEmprestimo, createSolicitation }}>
       {children}
     </ AuthContext.Provider>
@@ -187,10 +137,8 @@ export const AuthProvider: React.FC = ({ children }) => {
 }
 
 
-//criando um hook para usar nos componentes
 export function useAuth() {
   const context = useContext(AuthContext)
 
-  //dentro do context de rotorno estao as variaveis que podem ser acessadas usando o useAuth
   return context
 }
