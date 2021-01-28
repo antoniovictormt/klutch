@@ -1,5 +1,4 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
-import { useHistory } from "react-router-dom";
+import React, { createContext, useState, useContext } from 'react';
 
 import Api from '../services/api.json';
 
@@ -134,8 +133,6 @@ export const AuthProvider: React.FC = ({ children }) => {
       valorDesejado: item.valorDesejado,
     })
   }
-
-  const history = useHistory();
 
   function createSolicitation(item: Solicitations) {
 

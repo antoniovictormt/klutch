@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SimulationContainer = styled.div`
   width: 100%;
-  background: var(--color-background-white);
+  background: var(--background-white);
   justify-content: center;
   align-items: center;
   display: flex;  
@@ -46,7 +46,7 @@ export const DivValueAndButton = styled.div`
 export const InputValorDesejado = styled.div`
   width: 470px;
   height: 60px;
-  background: var(--background-white) ;
+  background: var(--background-gray) ;
   border-radius: 5px;
   text-align: center;    
   align-items: center;
@@ -63,7 +63,7 @@ export const ValorDesejado = styled.input`
   border:none;
   box-shadow: none;
   outline:none!important;
-  background: var(--background-white) ;
+  background: var(--background-gray) ;
   width: 470px;
   height: 60px;
   border-radius: 5px;
@@ -89,7 +89,7 @@ export const ButtonValorDesejado = styled.div`
 export const DivTable = styled.div`
   margin-top: 50px;    
   width: 100%;
-  background: var(--background-white) 0% 0% no-repeat padding-box;
+  background: var(--background-gray) 0% 0% no-repeat padding-box;
   justify-content: center;
 `;
 
@@ -166,9 +166,9 @@ export const Table = styled.table`
 export const TableColTitle = styled.th`
   font-size: var(--font-size-25);
   letter-spacing: var(--character-spacing-0);
-  color: var(--unnamed-color-777777);
+  color: var(--color-gray);
   text-align: center;
-  border: 1px solid #dddddd;
+  border: 1px solid var(--border-color);
   background-color: var(--background-white);
   padding: 8px;
 `;
@@ -176,9 +176,9 @@ export const TableColTitle = styled.th`
 export const TableColItem = styled.td`  
   font-size: var(--font-size-32);
   letter-spacing: var(--character-spacing-0);
-  color: var(--unnamed-color-777777);
+  color: var(--color-gray);
   text-align: center;
-  border: 1px solid #dddddd;
+  border: 1px solid var(--border-color);
   padding: 8px;
 `;
 

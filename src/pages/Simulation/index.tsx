@@ -57,10 +57,6 @@ const Simulation = (props: Porps) => {
     ];
   }
 
-  interface tableModel {
-    default: boolean;
-  }
-
   const [inputValue, setInputValue] = useState("");
   const [activeBar, setActiveBar] = useState(false);
   const [lineId, setLineId] = useState(0);
@@ -152,14 +148,6 @@ const Simulation = (props: Porps) => {
     // setName(item2.name)
     // console.log("Nome")
     // console.log(name)
-  };
-
-  const teste = (item: tableModel) => {
-    if (item.default === true) {
-      return true;
-    } else {
-      return false;
-    }
   };
 
   const history = useHistory();

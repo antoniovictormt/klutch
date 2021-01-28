@@ -3,7 +3,9 @@ import React from "react";
 import {
   EnvelopSerie,
   PlusCicle,
-  Envelop
+  Envelop,
+  Alert,
+  Accept
 } from '../../assets';
 
 import {
@@ -25,8 +27,18 @@ import {
   FluxBox,
   SistemDivBox,
   SistemTitle,
-  SistemSpan,
-  SistemValue
+  SistemValue,
+  FluxBoxDiv,
+  FluxDivBox,
+  FluxBxDiv,
+  DivSituation,
+  Waiting,
+  Approve,
+  Reprove,
+  ApproveReprove,
+  CircleDenied,
+  Link,
+  Tittle
 } from './styles';
 
 function Detail() {
@@ -47,10 +59,7 @@ function Detail() {
               <DetailDiv>
                 <SistemDiv>
                   <SistemTitle>
-                    Solicitação gerada por
-                    <SistemSpan>
-                      Sistema CredFica
-                    </SistemSpan>
+                    Solicitação gerada por <span style={{ color: "var(--color-blue-primary" }}>Sistema Credfica</span>
                   </SistemTitle>
                   <SistemDivBox>
                     <SistemBox>
@@ -66,50 +75,74 @@ function Detail() {
                     <SistemBox>
                       Frente do Cartão
                       <ImgEnvelop src={Envelop} alt="" />
-                      <span>Ver Comprovante</span>
+                      <Link>
+                        Ver Comprovante
+                      </Link>
                     </SistemBox>
                     <SistemBox>
                       Verso do Cartão
                       <ImgEnvelop src={Envelop} alt="" />
-                      <span>Ver Comprovante</span>
+                      <Link>
+                        Ver Comprovante
+                      </Link>
                     </SistemBox>
                     <SistemBox>
                       Selfie do Cartão
                       <ImgEnvelop src={Envelop} alt="" />
-                      <span>Ver Comprovante</span>
+                      <Link>
+                        Ver Comprovante
+                      </Link>
                     </SistemBox>
                   </SistemDivBox>
                 </SistemDiv>
                 <SistemDiv>
                   <SistemTitle>
-                    Fluxo da Solicitação:
-                    <SistemSpan>
-                      Manual
-                    </SistemSpan>
+                    Fluxo da Solicitação: <span style={{ color: "var(--color-blue-primary" }}>                      Manual</span>
                   </SistemTitle>
                   <FluxBox>
                     Modalidade:
-                    <span>Cartão de Credito</span>
-                    <span>Número do Cartão: 5252 0565 6526 6552</span>
-                    <span>Validade 03/27</span>
-                    <span>1 parcelas de: <SistemValue>R$ 200</SistemValue></span>
-                    <span>Tabela: Tabela Padrão</span>
+                    <FluxBoxDiv>
+                      <span>Cartão de Credito</span>
+                      <span>Número do Cartão: 5252 0565 6526 6552</span>
+                      <span>Validade 03/27</span>
+                      <span>1 parcelas de: <SistemValue>R$ 200</SistemValue></span>
+                      <span>Tabela: Tabela Padrão</span>
+                    </FluxBoxDiv>
                   </FluxBox>
                   <FluxBox>
                     Informações do Cliente:
-                    <span>Nome: Lara B Esquivel</span>
-                    <span>CPF: 866.666.965.87</span>
-                    <span>Agência: 1235</span>
-                    <span>Banco: 029 - Banco Itaú Consignado S.A. </span>
-                    <span>Número da conta: 222245</span>
+                    <FluxDivBox>
+                      <span>Nome: Lara B Esquivel</span>
+                      <span>CPF: 866.666.965.87</span>
+                      <span>Agência: 1235</span>
+                      <span>Banco: 029 - Banco Itaú Consignado S.A. </span>
+                      <span>Tipo de Conta: Poupança </span>
+                      <span>Número da conta: 222245</span>
+                    </FluxDivBox>
                   </FluxBox>
-                  <FluxBox>
+                  <FluxBxDiv>
                     Informações Gerais:
-                    <span>Data: 09/03/2020</span>
-                    <span>Aguardando</span>
-                    <span>Pré Arpovar</span>
-                    <span>Reprovar</span>
-                  </FluxBox>
+                    <FluxBoxDiv>
+                      <span>Data: 09/03/2020</span>
+                      <DivSituation>
+                        <Waiting>
+                          <CircleDenied src={Alert} alt="" />
+                          <Tittle>Aguardando</Tittle>
+                        </Waiting>
+                        <ApproveReprove>
+                          <Approve>
+                            <CircleDenied src={Accept} alt="" />
+                            <Tittle>Pré Aprovar</Tittle>
+                          </Approve>
+
+                          <Reprove>
+                            <CircleDenied src={Alert} alt="" />
+                            <Tittle>Reprovar</Tittle>
+                          </Reprove>
+                        </ApproveReprove>
+                      </DivSituation>
+                    </FluxBoxDiv>
+                  </FluxBxDiv>
                 </SistemDiv>
               </DetailDiv>
             </DivFlex>

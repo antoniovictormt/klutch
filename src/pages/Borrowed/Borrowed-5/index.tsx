@@ -52,7 +52,7 @@ const Borrowed5 = (props: Porps) => {
     ];
   }
 
-  const [rateTable, setRateTable] = useState<RatetableModel[]>([]);
+  const [, setRateTable] = useState<RatetableModel[]>([]);
   const searchTable = () => {
     // const data:object = Api.rateTable[0];
     let arr = [Api.rateTable[0]];

@@ -168,10 +168,7 @@ const Borrowed4 = (props: Porps) => {
                     <SpanSelect>Valor desejado:</SpanSelect>
                   </DivTitleSelect>
                   <DivSelect>
-                    <Input placeholder="" type="text" name="valor_desejado" value={pedidoEmprestimo?.valorDesejado} disabled={true} />
-                    {/* <Select name="" id="" >
-                      <SelectOption value="tabela">R$1.000,00</SelectOption>
-                    </Select> */}
+                    <Input placeholder="R$1.000,00" type="text" name="valor_desejado" value={pedidoEmprestimo?.valorDesejado} disabled={true} />
                   </DivSelect >
                 </DivBaseSelectTop2 >
                 <DivBaseSelectTop2>
@@ -198,10 +195,7 @@ const Borrowed4 = (props: Porps) => {
                     <SpanSelect>Valor Total do Empréstimo:</SpanSelect>
                   </DivTitleSelect>
                   <DivSelect>
-                    <Input placeholder="" type="text" name="v" />
-                    {/* <Select name="" id="" >
-                      <SelectOption value="tabela">R$1.000,00</SelectOption>
-                    </Select> */}
+                    <Input placeholder="R$1.000,00" type="text" name="valor_total" value={pedidoEmprestimo?.valorDesejado} disabled={true} />
                   </DivSelect>
                 </DivBaseSelectTop2>
                 <DivBaseSelectTop2>
@@ -209,7 +203,7 @@ const Borrowed4 = (props: Porps) => {
                     <SpanSelect>Valor da parcela:</SpanSelect>
                   </DivTitleSelect>
                   <DivSelect>
-                    <Input placeholder="" type="text" name="v" />
+                    <Input placeholder="R$1.000,00" type="text" name="valor_parcela" value={pedidoEmprestimo?.valorDesejado} disabled={true} />
                   </DivSelect>
                 </DivBaseSelectTop2>
               </div>

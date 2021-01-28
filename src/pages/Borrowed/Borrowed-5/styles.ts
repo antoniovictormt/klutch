@@ -29,6 +29,7 @@ export const DivTitleSelect = styled.div`
   margin: 0 40px 0 30px;
   align-items: center;
   display: flex;
+  margin: auto;
 `;
 
 export const SpanName = styled.span`  
@@ -59,7 +60,7 @@ export const DivBaseSelectTop2 = styled.div`
 `;
 
 export const SpanButtonValorDesejado = styled.span`  
-  font-size: var(--font-size-18);
+  font-size: var(--font-size-32);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--character-spacing-0);
   color: var(--color-white);
@@ -112,5 +113,11 @@ export const ButtonValorDesejado = styled.button`
   border-radius: 5px;
   cursor: pointer;
   border: none !important;
-  outline-style: none;
+  outline-style: none;  
+  
+  transition: 0.2s;
+
+  :hover {
+    background: var(--color-blue-secundary);
+  }
 `;

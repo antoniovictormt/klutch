@@ -9,7 +9,7 @@ export const InputCard = styled.input`
   border: none;
   box-shadow: none;
   outline: none !important;
-  background: var(--background-white);
+  background: var(--background-gray);
   height: 60px;
   border-radius: 5px;
   margin: 10px 0 10px 0;
@@ -50,7 +50,7 @@ export const DivInfo = styled.div`
   border: none;
   box-shadow: none;
   outline: none !important;
-  background: var(--color-white);
+  background: var(--background-gray);
   width: 450px;
   height: 62px;
   border-radius: 5px;
@@ -68,8 +68,7 @@ export const DivInput = styled.div`
   border: none;
   box-shadow: none;
   outline: none !important;
-  background: var(--background-white);
-  /* width: 450px; */
+  background: var(--background-gray);
   height: 62px;
   border-radius: 5px;
   margin: 10px 0 10px 0;
@@ -88,7 +87,7 @@ export const Input = styled.input`
   border: none;
   box-shadow: none;
   outline: none !important;
-  background: var(--background-white);
+  background: var(--background-gray);
   width: 450px;
   height: 60px;
   border-radius: 5px;
@@ -149,9 +148,8 @@ export const DivCalculo = styled.div`
 export const TitleValorDesejado = styled.span`
   margin-top: 80px;
   margin-bottom: 30px;
-  font: var(--unnamed-font-style-normal) var(--unnamed-font-weight-bold) 25px/40px
-    var(--unnamed-font-family-flexo);
-  letter-spacing: var(--unnamed-character-spacing-0);
+  font-size: var(--font-size-25);
+  letter-spacing: var(--character-spacing-0);
   color: var(--color-blue-primary);
   text-align: center;
 `;
@@ -165,6 +163,10 @@ export const DivValueAndButton = styled.div`
   width: 1000px;
 `;
 
+export const DivInputCard = styled.div`
+  background: var(--background-gray);
+`;
+
 export const ButtonValorDesejado = styled.button`
   width: 300px;
   height: 54px;
@@ -176,6 +178,12 @@ export const ButtonValorDesejado = styled.button`
   cursor: pointer;
   border: none !important;
   outline-style: none;
+  
+  transition: 0.2s;
+
+  :hover {
+    background: var(--color-blue-secundary);
+  }
 `;
 
 export const Img = styled.img`

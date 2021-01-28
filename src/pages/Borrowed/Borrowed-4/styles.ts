@@ -22,7 +22,9 @@ export const SpanTipoContrato = styled.span`
 
 export const Input = styled.input`
   font-size: var(--font-size-18);
-  color: var(--color-orange-primary);
+  color: var(--color-orange-secundary);
+  font-style: var(--font-style-italic);
+  font-weight: var(--font-weight-bold);
   text-align: center;
   border-width: 0px;
   border: none;
@@ -38,6 +40,7 @@ export const Input = styled.input`
 export const SelectOption = styled.option`
   font-size: 22px;
   background: var(--background-white);
+  font-size: var(--font-size-18);
 `;
 
 export const Select = styled.select`
@@ -50,6 +53,9 @@ export const Select = styled.select`
   border: none;
   box-shadow: none;
   outline: none !important;
+  color: var(--color-orange-primary);
+  font-style: var(--font-style-italic);
+  font-weight: var(--font-weight-bold);
 `;
 
 export const DivSelect = styled.div`
@@ -137,6 +143,12 @@ export const ButtonValorDesejado = styled.button`
   cursor: pointer;
   border: none !important;
   outline-style: none;
+  
+  transition: 0.2s;
+
+  :hover {
+    background: var(--color-blue-secundary);
+  }
 `;
 
 export const Table = styled.table`
